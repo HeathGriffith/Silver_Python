@@ -55,8 +55,21 @@ output = []
 N = int(input())
 commands = ['insert', 'print', 'remove', 'append', 'sort', 'pop', 'reverse']
 counter = 0
+
 while counter < N:
-    command = input()
-    if command in commands[0]:
-        part = command.split()
-        output.insert(int(part[1]), int(part[2]))
+    command = input().split()
+    if command[0] == commands[0]:
+        output.insert(int(command[1]), int(command[2]))
+    elif command[0] == commands[1]:
+        print(output)
+    elif command[0] == commands[2]:
+        output.remove(int(command[1]))
+    elif command[0] == commands[3]:
+        output.append(int(command[1]))
+    elif command[0] == commands[4]:
+        output.sort()
+    elif command[0] == commands[5]:
+        output.pop()
+    elif command[0] == commands[6]:
+        output.reverse()
+    counter += 1 
