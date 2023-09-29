@@ -1,8 +1,10 @@
 '''
 first = input("Enter first number: ")
 second = input("Enter second number: ")
-temporary = first = second
+temporary = first
+first = second
 second = temporary
+
 
 
 # shortcut

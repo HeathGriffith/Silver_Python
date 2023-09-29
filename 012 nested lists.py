@@ -1,3 +1,4 @@
+
 cells = [['A1', 'A2', 'A3'], ['B1', 'B2', 'B3']]
 
 '''
@@ -5,7 +6,6 @@ cells = [['A1', 'A2', 'A3'], ['B1', 'B2', 'B3']]
 print(cells[0])
 print(cells[0][1])
 print(cells[1][2])
-'''
 
 # use for loop to iterate list and print elements
 for x in cells:
@@ -29,3 +29,4 @@ for row in table:
 
 tab = [[i for i in range (1,6)] for j in range(4)]
 print(tab)
+'''

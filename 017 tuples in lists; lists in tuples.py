@@ -11,6 +11,6 @@ for capital in capitals:
 # tuple containing list, e.g., adding tracked weights as list
 user_data = ('John', 'American', 1964, [77.0, 78.2, 77.5])
 
-# the tuple's last element is mutable
+# the tuple's list element is mutable
 user_data[3].append(79.6)
 print(user_data)
