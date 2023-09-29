@@ -10,7 +10,8 @@ one_element_tup_b = 1,
 three_element_tup = 1, 2, 3
 print(three_element_tup)
 
-''' mutability: lists are mutable (add/delete/swap easily);  
+''' 
+mutability: lists are mutable (add/delete/swap easily);  
 
 no modifying with tuples (immutable)
 E.g., 

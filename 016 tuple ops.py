@@ -17,7 +17,7 @@ user_data2 = ('John', 'American', 1964) + ('teacher',)
 print(user_data2)
 
 '''
-while *lists* are used with elements of same data types, e.g., male names or float temperatures
+while *lists* are used with elements of same data types, e.g., male names or float temperatures,
 use *tuples* 
 (1) with different data types that are related
 (2) to perform some operations quicker. E.g., swap value of two variables:

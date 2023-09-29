@@ -1,3 +1,4 @@
+'''
 # *in* operator checks every element in string 
 for char in 'happy message':
     print(char)
@@ -11,3 +12,4 @@ else:
     print('You are not invited!')
 
     #also works: 8. *if name not in invited_guests:
+'''
