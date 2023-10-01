@@ -27,7 +27,7 @@ def get_average(input_numbers):
 get_average([2])
 
 # example 1/3 with with populated list:
-def is_first_last_equal (number_list):
+def is_first_last_equal(number_list):
     if (number_list[0] == number_list[-1]):
         return True
     else:
@@ -35,15 +35,15 @@ def is_first_last_equal (number_list):
 print(is_first_last_equal([10, 20, 30, 40, 10]))
 
 # example 2/3 with empty list (index error) 
-def is_first_last_equal (number_list):
+def is_first_last_equal(number_list):
     if (number_list[0] == number_list[-1]):
         return True
     else:
         return False
 print(is_first_last_equal([]))
-
-# exmample 3/3 modification to exit function when no elements in list
 '''
+# exmample 3/3 modification to exit function when no elements in list
+
 def is_first_last_equal(number_list):
     if len(number_list) == 0:
         return
