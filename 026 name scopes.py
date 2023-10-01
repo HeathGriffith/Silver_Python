@@ -25,16 +25,6 @@ show_truth()
 print(mysterious_var)
 
 
-# RARE and AVOID: If don't want secondary variable, can change the global variable even outside function body:
-def show_truth():
-    global mysterious_var = 'New Yay'
-    print(mysterious_var)
-mysterious_var = 'Yay'
-print(mysterious_var)
-show_truth()
-print(mysterious_var)
-
-
 # when working with lists (expected)
 def show_truth():
     mysterious_var = ['New Yay']
@@ -43,8 +33,8 @@ mysterious_var = ['Yay']
 print(mysterious_var)
 show_truth()
 print(mysterious_var)
-'''
 
+'''
 # when working with lists (surprise):
 def show_truth():
     mysterious_var.append('New Yay')
