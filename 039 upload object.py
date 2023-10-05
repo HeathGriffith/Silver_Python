@@ -12,9 +12,9 @@ r'''
 # I put the path because of trouble finding the file, prefixing with *r* removed Python backslash function
 # *open* function denotes which mode the file is opened in, *rb* stands for read binary, the correct mode...
 #   for uploading files to s3
+'''
 with open(r'C:\Users\heath\OneDrive\Documents\VSCode\Python Learning\LUIT\Silver_Python\test_text.txt', 'rb') as f:
-    s3.put_object(Bucket='hgriffith-boto3-10052023', Key="test_text.txt", Body=f)'''
-
+    s3.put_object(Bucket='hgriffith-boto3-10052023', Key="test_text.txt", Body=f, ContentType='text/plain')
 
 # List the objects in your bucket
 response = s3.list_objects_v2(Bucket='hgriffith-boto3-10052023')
