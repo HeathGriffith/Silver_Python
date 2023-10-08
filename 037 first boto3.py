@@ -12,4 +12,4 @@ response = s3.create_bucket(
 
 print(response)
 
-# can paste response to a json formatter for readability
+# paste response to a json formatter for readability
