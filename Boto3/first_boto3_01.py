@@ -1,6 +1,6 @@
 import boto3
 
-# main three boto3 interfaces (ways boto3 communicates with AWS):
+# main three boto3 interfaces (ways boto3 communicates with AWS)::
 
 
 # (1) Session object to connect directly to AWS. Pass in keys as starting point. Initialize a session using Amazon S3
