@@ -2,14 +2,13 @@ import boto3
 ec2_client = boto3.client('ec2', region_name='us-east-1')
 
 # Function to launch instances 
-def launch_instance(tag_value, image_id='ami-', instance_type='t2.micro', key_name='key-pair'):
+def launch_instance(tag_value, image_id='ami-0df435f331839b2d6', instance_type='t2.micro'):
     try:
         instance = ec2_client.run_instances(
             ImageId=image_id,  
             MinCount=1, 
             MaxCount=1, 
-            InstanceType=instance_type,  
-            KeyName=key_name,  
+            InstanceType=instance_type,
             TagSpecifications=[
                 {
                     'ResourceType': 'instance',
