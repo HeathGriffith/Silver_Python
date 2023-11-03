@@ -1,30 +1,43 @@
 import boto3
 import datetime
-import os  # Import the os module to access environment variables
+import os
 
-# Define the AWS SDK client
+# Initialize an SQS client
 sqs = boto3.client('sqs')
 
+def send_message(queue_url, message_body):
+    # Send a message to the specified SQS queue.
+    try:
+        # Attempt to send the message to the SQS queue
+        response = sqs.send_message(QueueUrl=queue_url, MessageBody=message_body)
+        # If successful, return a response object with a status code of 200
+        return {
+            'statusCode': 200,  # Indicates success
+            'body': response  # Contains the response from the SQS send_message call
+        }
+    except Exception as e:
+        # If an exception occurs, print the exception
+        print(f'Exception: {e}')
+        raise  # Re-raise the current exception to be handled by AWS Lambda's error handling
+
+
 def lambda_handler(event, context):
+    # Main Lambda function handler.
     # Retrieve the SQS queue URL from an environment variable
     queue_url = os.getenv('queue_url')
     
-    if not queue_url:  # Check if the queue_url is None or an empty string
-        raise ValueError("Missing queue URL. Set the queue_url environment variable.")
-    
-    # Create a message body, in this case, the current date and time
+    # Check if the queue_url environment variable is set
+    if not queue_url:
+        # If not, print an error message and return a 'Bad Request' response
+        error_message = "Missing queue URL. Set the queue_url environment variable."
+        print(error_message)
+        return {
+            'statusCode': 400,  # Bad Request
+            'body': {'error': error_message}  # Contains the error message
+        }
+
+    # Create a message body containing the current date and time
     message_body = str(datetime.datetime.now())
     
-    try:
-        # Send a message to the specified SQS queue
-        response = sqs.send_message(QueueUrl=queue_url, MessageBody=message_body)
-    except Exception as e:
-        # Log the exception if there's an error
-        print(f"Exception: {e}")
-        raise e  # Re-raise the exception to AWS Lambda's error handling
-    
-    # Return a success response
-    return {
-        'statusCode': 200,
-        'body': response
-    }
+    # Send the message to the SQS queue
+    return send_message(queue_url, message_body)
