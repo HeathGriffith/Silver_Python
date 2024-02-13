@@ -12,9 +12,8 @@ vehicle["color"] = "blue"
 del vehicle["make"]
 # print(vehicle)
 
-users = {"Heath" : {"last_name": "Griffith", "age" : "40"}, 
-         "Macrina": {"last_name": "Garza", "age": "37"}}
-
-for key in vehicle:
-    print(f"{key}: {vehicle[key]}")
-
+users = {
+    "Heath" : {"last_name": "Griffith", "age" : "40"}, 
+    "Macrina": {"last_name": "Garza", "age": "37"}
+}
+print(users)
